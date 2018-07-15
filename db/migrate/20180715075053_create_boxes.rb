@@ -6,8 +6,8 @@ class CreateBoxes < ActiveRecord::Migration[5.2]
       t.boolean :in
       t.boolean :empty
       t.text :location
+      
       t.integer :user_id
-
       t.timestamps
     end
   end
