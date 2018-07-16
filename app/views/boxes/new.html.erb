@@ -3,30 +3,21 @@
 <%= form_for @box do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
-
   <%= f.label :image %>
   <%= f.text_field :image %>
-
   <%= f.label :location %>
   <%= f.text_field :location %>
-
   <fieldset>
     <%= f.label :in, "in" %>
     <%= f.radio_button :in, true %>
     <%= f.label :in, "out" %>
     <%= f.radio_button :in, false %>
   </fieldset>
-
   <fieldset>
     <%= f.label :empty %>
     <%= f.radio_button :empty, true %>
     <%= f.label :empty, "full" %>
     <%= f.radio_button :empty, false %>
   </fieldset>
-
-
-
   <%= f.submit %>
 <% end %>
-
-<%= link_to 'Home', '/' %>

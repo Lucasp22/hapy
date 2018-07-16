@@ -1,14 +1,1 @@
-<h1>HAPPY BOXES :-)</h1>
-  <% if @current_user.present? %>
-    <h1>Welcome back
-      <%= @current_user.email %></h1>
-      <%= link_to 'Logout', '/login',
-                  data: {:confirm => 'Are you sure?'}, :method => :delete %>
-      <%= link_to 'Create box', 'box', :method => :get %>
-      <%= link_to 'See box', 'boxes', :method => :get %>
-    <% else %>
-    <%= link_to 'Login', '/login',
-                data: {}, :method => :get %>
-      <%= link_to 'Sign up', '/users/new',
-                  data: {}, :method => :get %>
-  <% end %>
+

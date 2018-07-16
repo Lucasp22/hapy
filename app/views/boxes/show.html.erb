@@ -1,16 +1,23 @@
 <h1>Box Name:<%= @box.title %></h1>
 
 <fieldset>
-  <h2>In:  <%= @box.in %></h2>
-  <h2>Empty: <%= @box.empty %></h2>
-  <h2>Location:<%= @box.location %></h2>
+    <table>
+      <tr>
+        <th><h3>In</h3></th>
+        <th><h3>Empty</h3></th>
+        <th><h3>Location</h3></th>
+        <th colspan="3"></th>
+      </tr>
+      <tbody>
+        <td><h3><%= @box.in %></h3></td>
+        <td><h3><%= @box.empty %></h3></td>
+        <td><h3><%= @box.location %></h3></td>
+      </tbody>
+    </table>
   <%= image_tag @box.image, :alt => @box.title, :class => 'feature' %>
-</fieldset>
-<fieldset>
+
   <div class="controls">
     <%= link_to 'Edit Box', edit_box_path(@box) %>
     <%= link_to 'Delete Box', box_path(@box), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   </div>
 </fieldset>
-
-<%= link_to 'Home', '/' %>
