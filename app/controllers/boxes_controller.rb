@@ -2,7 +2,7 @@ class BoxesController < ApplicationController
   before_action :check_for_login, :only => [:new, :create]
 
   def index
-    @boxes = Box.all
+    @boxes = @current_user.boxes
   end
 
   def show
