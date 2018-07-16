@@ -1,15 +1,27 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<nav>
+  <% if @current_user.present? %>
+    <h1>Welcome back
+      <%= @current_user.email %></h1>
+      <%= link_to 'Logout', '/login',
+                  data: {:confirm => 'Are you sure?'}, :method => :delete %>
+      <%= link_to 'Create box', 'box', :method => :get %>
+      <%= link_to 'See box', 'boxes', :method => :get %>
 
-<% if @current_user.present? %>
-  <h1>Welcome back
-    <%= @current_user.email %></h1>
-    <%= link_to 'Logout', '/login',
-                data: {:confirm => 'Are you sure?'}, :method => :delete %>
-    <%= link_to 'Create box', 'box', :method => :get %>
-    <%= link_to 'See box', 'boxes', :method => :get %>
-  <% else %>
-    <%= link_to 'Sign up', '/users/new',
+      <%= link_to 'Update', 'boxes/edit', :method => :get %>
+
+
+
+
+    <% else %>
+
+    <%= link_to 'Login', '/login',
                 data: {}, :method => :get %>
-<% end %>
+
+
+      <%= link_to 'Sign up', '/users/new',
+                  data: {}, :method => :get %>
+  <% end %>
+</nav>

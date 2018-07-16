@@ -1,4 +1,4 @@
-<h1>Boxes#index</h1>
+<h1>All Boxes</h1>
 <% @boxes.each do |box| %>
-  <p><%= box.title %></p>
+  <%= link_to box.title, box %>
 <% end %>

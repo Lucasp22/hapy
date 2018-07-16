@@ -1,14 +1,9 @@
-<h1>New Boxes</h1>
-
 <%= form_for @box do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
   <%= f.label :image %>
   <%= f.text_field :image %>
-
-  <%= f.label :location %>
-  <%= f.text_field :location %>
 
   <fieldset>
     <%= f.label :in, "in" %>
@@ -24,7 +19,11 @@
     <%= f.radio_button :empty, false %>
   </fieldset>
 
+  <%= f.label :location %>
+  <%= f.text_field :location %>
 
+  <%= f.label :user_id %>
+  <%= f.select :user_id, User.pluck(:email, :id), :include_blank => true %>
 
   <%= f.submit %>
 <% end %>
