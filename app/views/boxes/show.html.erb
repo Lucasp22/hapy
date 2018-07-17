@@ -1,23 +1,27 @@
-<h1>Box Name:<%= @box.title %></h1>
+<h1 class="display-4">Box<%= @box.title %></h1>
 
-<fieldset>
-    <table>
-      <tr>
-        <th><h3>In</h3></th>
-        <th><h3>Empty</h3></th>
-        <th><h3>Location</h3></th>
-        <th colspan="3"></th>
-      </tr>
+<%= image_tag @box.image, :alt => @box.title, :class => "rounded float-left" %>
+    <table class ="table">
+      <thead>
+        <tr>
+          <th scope="col">In</th>
+          <th scope="col">Empty</th>
+          <th scope="col">Location</th>
+        </tr>
+      </thead>
+
       <tbody>
-        <td><h3><%= @box.in %></h3></td>
-        <td><h3><%= @box.empty %></h3></td>
-        <td><h3><%= @box.location %></h3></td>
+
+        <td><%= @box.in %></td>
+        <td><%= @box.empty %></td>
+        <td><%= @box.location %></td>
       </tbody>
     </table>
-  <%= image_tag @box.image, :alt => @box.title, :class => 'feature' %>
 
-  <div class="controls">
-    <%= link_to 'Edit Box', edit_box_path(@box) %>
-    <%= link_to 'Delete Box', box_path(@box), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-  </div>
-</fieldset>
+
+
+
+    <div class="list-group-item list-group-item-action list-group-item-light">
+    <%= link_to 'Edit Box', edit_box_path(@box), :class => "badge badge-pill badge-secondary" %>
+    <%= link_to 'Delete Box', box_path(@box), :class => "badge badge-pill badge-secondary", :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    </div>

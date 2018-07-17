@@ -1,29 +1,34 @@
-<%= form_for @box do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<%= form_for @box, :class => "form-inline" do |f| %>
+  <div class=", :class => "form-inline">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "form-control" %>
+    <%= f.label :image %>
+    <%= f.text_field :image, :class => "form-control" %>
 
-  <%= f.label :image %>
-  <%= f.text_field :image %>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
 
-  <fieldset>
-    <%= f.label :in, "in" %>
-    <%= f.radio_button :in, true %>
-    <%= f.label :in, "out" %>
-    <%= f.radio_button :in, false %>
-  </fieldset>
+      <%= f.label :in, "in"%>
+      <%= f.radio_button :in, true %>
 
-  <fieldset>
-    <%= f.label :empty %>
-    <%= f.radio_button :empty, true %>
-    <%= f.label :empty, "full" %>
-    <%= f.radio_button :empty, false %>
-  </fieldset>
+      
+      <%= f.label :in, "out" %>
+      <%= f.radio_button :in, false %>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+      <%= f.label :empty %>
+      <%= f.radio_button :empty, true %>
+      <%= f.label :empty, "full" %>
+      <%= f.radio_button :empty, false %>
 
-  <%= f.label :user_id %>
-  <%= f.select :user_id, User.pluck(:email, :id), :include_blank => true %>
 
-  <%= f.submit %>
+    <%= f.label :location %>
+    <%= f.text_field :location, :class => "form-control" %>
+
+    <%= f.label :user_id %>
+    <%= f.select :user_id, User.pluck(:email, :id), :include_blank => true %>
+
+    <%= f.submit "Update", :class => "btn btn-primary btn-sm"    %>
+  </div>
+
+
+
 <% end %>
