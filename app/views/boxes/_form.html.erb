@@ -1,16 +1,20 @@
-<%= form_for @box, :class => "form-inline" do |f| %>
-  <div class=", :class => "form-inline">
+
+
+<%#= form_for @box, :class => "form-inline" do |f| %>
+<%= form_for(@box, :html => { :multipart => true }) do |f| %>
+
     <%= f.label :title %>
     <%= f.text_field :title, :class => "form-control" %>
-    <%= f.label :image %>
-    <%= f.text_field :image, :class => "form-control" %>
+
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
 
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
 
       <%= f.label :in, "in"%>
       <%= f.radio_button :in, true %>
 
-      
+
       <%= f.label :in, "out" %>
       <%= f.radio_button :in, false %>
 
@@ -18,7 +22,7 @@
       <%= f.radio_button :empty, true %>
       <%= f.label :empty, "full" %>
       <%= f.radio_button :empty, false %>
-
+    </div>
 
     <%= f.label :location %>
     <%= f.text_field :location, :class => "form-control" %>
@@ -26,9 +30,5 @@
     <%= f.label :user_id %>
     <%= f.select :user_id, User.pluck(:email, :id), :include_blank => true %>
 
-    <%= f.submit "Update", :class => "btn btn-primary btn-sm"    %>
-  </div>
-
-
-
+    <%= f.submit "Update", :class => "btn btn-primary btn-sm"     %>
 <% end %>

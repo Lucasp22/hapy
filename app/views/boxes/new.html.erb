@@ -1,26 +1,27 @@
+
 <h1 class="display-4">New Boxes</h1>
 
-<%= form_for @box, :class => "form-inline" do |f| %>
+<%= form_for(@box, :html => { :multipart => true }) do |f| %>
   <div class=", :class => "form-inline"">
-    <%= f.label :title %>
+    <%= f.label :title %><br>
     <%= f.text_field :title, :class => "form-control" %>
-    <%= f.label :image %>
-    <%= f.text_field :image, :class => "form-control" %>
-    <%= f.label :location %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %><br>
+    <%= f.label :location %><br>
     <%= f.text_field :location, :class => "form-control" %>
   </div>
 
 
 
-    <%= f.label :in, "in" %>
+    <%= f.label :in, "in" %><br>
     <%= f.radio_button :in, true %>
-    <%= f.label :in, "out" %>
+    <%= f.label :in, "out" %><br>
     <%= f.radio_button :in, false %>
+  
 
-
-    <%= f.label :empty %>
+    <%= f.label :empty %><br>
     <%= f.radio_button :empty, true %>
-    <%= f.label :empty, "full" %>
+    <%= f.label :empty, "full" %><br>
     <%= f.radio_button :empty, false %>
 
   <%= f.submit "Create Box", :class => "btn btn-primary btn-sm"   %>
