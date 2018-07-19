@@ -2,7 +2,7 @@
 <h1 class="display-6">Box <%= @box.title %></h1>
 <div class="card-body bg-light mb-3" style="width: 50rem;">
 
-  <%= image_tag  @box.image, :alt => @box.title, :class => "img-thumbnail" %>
+  <%= image_tag  @box.image, :alt => @box.title, :class => "img-thumbnail" unless @box.image.nil?%>
       <br>
       <br>
       <table class ="table">

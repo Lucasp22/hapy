@@ -25,12 +25,13 @@
         </a>
         <ul class="navbar-nav">
           <% if @current_user.present? %>
-            <!-- <li class="nav-item"><h6>Welcome back <%= @current_user.email %></h6></li> -->
-            <li class="nav-item"><%= link_to 'Home', '/', :class => "nav-link" %></li>
-            <li class="nav-item"><%= link_to 'Logout', '/login', :class => "nav-link", data: {:confirm => 'Are you sure?'}, :method => :delete %>
+            <li class="nav-item"><%= link_to 'Home', root_path, :class => "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'Logout', login_path, :class => "nav-link", data: {:confirm => 'Are you sure?'}, :method => :delete %>
             </li>
-            <li class="nav-item"><%= link_to 'Create box', 'box', :class => "nav-link", :method => :get %></li>
-            <li class="nav-item">  <%= link_to 'See box', 'boxes', :class => "nav-link", :method => :get %>
+            <li class="nav-item"><%= link_to 'Create box', new_box_path, :class => "nav-link", :method => :get %></li>
+
+            <li class="nav-item">  <%= link_to 'See box', boxes_path, :class => "nav-link", :method => :get %>
+
             </li>
           <% else %>
             <li class="nav-item">
@@ -42,5 +43,12 @@
       </nav>
       <%= yield %>
     </div>
+  <footer>
+    <div class="container">
+      <h6 class="display-8">© 2018 Lucas Padua ;-)</h6>
+    </div>
+  </footer>
+
+
   </body>
 </html>

@@ -16,8 +16,13 @@ class BoxesController < ApplicationController
 
   def create
     box = Box.create box_params
-    cloudinary = Cloudinary::Uploader.upload( params[ "box" ][ "image" ] )
-    box.image = cloudinary["url"]
+
+    if params["box"]["image"].present?
+      cloudinary = Cloudinary::Uploader.upload( params[ "box" ][ "image" ] )
+      box.image = cloudinary["url"]
+    end
+
+
     box.user_id = @current_user.id
     box.save
     redirect_to box
