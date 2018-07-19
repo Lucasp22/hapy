@@ -1,28 +1,35 @@
+<div class="container">
 
-<h1 class="display-4">New Boxes</h1>
+<h1 class="display-6">New Boxes</h1>
 
-<%= form_for(@box, :html => { :multipart => true }) do |f| %>
-  <div class=", :class => "form-inline"">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, :class => "form-control" %>
-    <%= f.label :image %><br>
-    <%= f.file_field :image %><br>
-    <%= f.label :location %><br>
-    <%= f.text_field :location, :class => "form-control" %>
-  </div>
+<div class="card-body bg-light mb-3" style="width: 30rem;">
+  <%= form_for(@box, :html => { :multipart => true }) do |f| %>
+
+      <%= f.label :title %><br>
+      <%= f.text_field :title, :class => "form-control" %>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %><br>
+      <%= f.label :location %><br>
+      <%= f.text_field :location, :class => "form-control" %>
 
 
 
-    <%= f.label :in, "in" %><br>
+
+    <%= f.label :in, "in",:class => "btn btn-light"%>
     <%= f.radio_button :in, true %>
-    <%= f.label :in, "out" %><br>
-    <%= f.radio_button :in, false %>
-  
 
-    <%= f.label :empty %><br>
+    <%= f.label :in, "out",:class => "btn btn-light" %>
+    <%= f.radio_button :in, false %><br>
+
+    <%= f.label :empty ,:class => "btn btn-light"%>
     <%= f.radio_button :empty, true %>
-    <%= f.label :empty, "full" %><br>
+
+    <%= f.label :empty, "full",:class => "btn btn-light" %>
     <%= f.radio_button :empty, false %>
 
-  <%= f.submit "Create Box", :class => "btn btn-primary btn-sm"   %>
-<% end %>
+    <br>  <%= f.submit "Create Box", :class => "btn btn-dark"   %>
+    <% end %>
+</div>
+
+
+  </div>

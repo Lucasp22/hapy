@@ -1,10 +1,15 @@
-<h1 class="display-4">All Boxes</h1>
-<ul>
-  <% @boxes.sort.each do |box| %>
-  <ul class="list-group list-group-flush">
-    <li>  <%= link_to box.title, box, :class => "list-group-item list-group-item-light" %></li>
-  </ul>
+<div class="container">
+  <h1 class="display-6">All Boxes</h1>
 
-  <% end %>
+  <div class="card-body bg-light mb-3" style="width: 30rem;">
+    <ul>
+      <% @boxes.sort.each do |box| %>
+      <ul class="list-group list-group-flush" style="width: 20rem;">
+        <li>  <%= link_to box.title, box, :class => "list-group-item list-group-item-light" %></li>
+      </ul>
+      <% end %>
+    </ul>
+  </div>
 
-</ul>
+
+</div>
