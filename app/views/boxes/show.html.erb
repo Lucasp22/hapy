@@ -1,13 +1,10 @@
 <div class="container">
-
 <h1 class="display-6">Box <%= @box.title %></h1>
-
 <div class="card-body bg-light mb-3" style="width: 50rem;">
 
   <%= image_tag  @box.image, :alt => @box.title, :class => "img-thumbnail" %>
       <br>
       <br>
-
       <table class ="table">
         <thead class ="table-dark table-striped">
           <tr>
@@ -16,25 +13,17 @@
             <th scope="col">Location</th>
           </tr>
         </thead>
-
         <tbody>
           <td><%= @box.in %></td>
           <td><%= @box.empty %></td>
           <td><%= @box.location %></td>
         </tbody>
       </table>
-
       <%= link_to 'Edit Box', edit_box_path(@box), :class => "btn btn-dark"%>
-
       <%= link_to 'Delete Box', box_path(@box), :class => "btn btn-dark", :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
       <br>
       <br>
       <br>
-      
-
-</div>
-
-
-
 
   </div>
+</div>

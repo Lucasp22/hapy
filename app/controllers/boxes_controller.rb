@@ -16,19 +16,15 @@ class BoxesController < ApplicationController
 
   def create
     box = Box.create box_params
-
     cloudinary = Cloudinary::Uploader.upload( params[ "box" ][ "image" ] )
     box.image = cloudinary["url"]
-
     box.user_id = @current_user.id
     box.save
-
     redirect_to box
   end
 
   def edit
       @box = Box.find params[:id]
-      # binding.pry
   end
 
   def update
@@ -41,11 +37,8 @@ class BoxesController < ApplicationController
     end
     box.user_id = @current_user.id
     box.save
-
     redirect_to box
-
   end
-
 
   def destroy
     box = Box.find params[:id]
@@ -53,11 +46,8 @@ class BoxesController < ApplicationController
     redirect_to boxes_path
   end
 
-
-
-
   private
   def box_params
-    params.require(:box).permit(:title, :image, :location, :user_id)
+    params.require(:box).permit(:title, :image, :location, :user_id, :empty, :in)
   end
 end
